@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CartoDB Testing</title>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<link rel="stylesheet" href="http://code.leafletjs.com/leaflet-0.3.1/leaflet.css" type="text/css"/>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/ui-darkness/jquery-ui.css" type="text/css"/>
+<!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://code.leafletjs.com/leaflet-0.3.1/leaflet.ie.css" />
+<![endif]-->
+<!-- <link href="cartodb-leaflet/cartodb.css" rel="stylesheet" type="text/css"/> -->
+
+</head>
+<body>
+<div id="header-container">
+		<header class="wrapper clearfix">
+			<h1 id="title">City of Salisbury:  Fire Hydrant Finder</h1>
+		</header>
+</div>
+<div id="main-container">
+<div id="main" class="wrapper clearfix">
+<div id="map"></div>
+<form id="gcode">
+	<div id="gcodeInputs">
+	<input id="street" type="text" name="address" value="507 S Pinehurst Ave";></input>
+	<input id="zip" type="text" name="zip" value="21801";></input>
+	<input id="gcodeSubmit" type="submit" value="Geocode"></input>
+	</div>
+	<div class="slide-div">
+		<label for="buffAmt" style="font-weight: bold">Buffer Distance:</label>
+		<input type="text" id="buffAmt" style="border:0; color:#f6931f; font-weight:bold;" />
+		<div id="slider"></div>
+	</div>
+</form>
+</div>
+</div>
+</body>
+<script src="http://code.leafletjs.com/leaflet-0.3.1/leaflet.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+<script type="text/javascript" src="cartodb-leaflet/cartodb-leaflet.js"></script>
+<script type="text/javascript" src="cartodb-leaflet/wax.leaflet.min.js"></script>
+<script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js">//stamen watercolor tiles</script>
+<script src="script.js"></script>
+</html>
