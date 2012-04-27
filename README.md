@@ -1,4 +1,4 @@
 hydrant_app
-
-I am editing this README to test branching in Git.
 ===========
+
+This is my first use of Leaflet to display CartoDB data using Cloudmade tiles as a basemap.
