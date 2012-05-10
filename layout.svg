@@ -53,9 +53,9 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1.0213757"
      inkscape:cx="746.47121"
-     inkscape:cy="1138.5006"
+     inkscape:cy="1060.1749"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      showgrid="true"
      inkscape:window-width="1680"
      inkscape:window-height="1028"
@@ -14274,19 +14274,12 @@ L/zoKufGz+HUuj5N/v/KzRvH4nACMwAAAABJRU5ErkJggg==
        x="730.53265"
        y="-157.10513" />
     <rect
-       style="fill:#dedcc3;fill-opacity:1;stroke:none"
+       style="fill:#dedcc3;fill-opacity:1;stroke:#000000;stroke-width:0.99972492;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="rect3825-8-2-6-9"
-       width="130"
-       height="30"
-       x="730"
-       y="-197.63782" />
-    <rect
-       style="fill:#dedcc3;fill-opacity:1;stroke:none"
-       id="rect3825-8-2-6-9-5"
-       width="130"
-       height="30"
-       x="870"
-       y="-197.63782" />
+       width="129.00029"
+       height="29.00028"
+       x="730.49988"
+       y="-197.13795" />
     <flowRoot
        xml:space="preserve"
        id="flowRoot4471"
@@ -14460,5 +14453,12 @@ L/zoKufGz+HUuj5N/v/KzRvH4nACMwAAAABJRU5ErkJggg==
            y="51.998798"
            style="font-size:16px" /></flowRegion><flowPara
          id="flowPara3778-6-2-1-4-7">510px / 96.226%</flowPara><flowPara
-         id="flowPara3780-1-7-9-6-88" /></flowRoot>  </g>
+         id="flowPara3780-1-7-9-6-88" /></flowRoot>    <rect
+       style="fill:#dedcc3;fill-opacity:1;stroke:#000000;stroke-width:0.99972492;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3825-8-2-6-9-8"
+       width="129.00029"
+       height="29.00028"
+       x="870.49988"
+       y="-197.13797" />
+  </g>
 </svg>

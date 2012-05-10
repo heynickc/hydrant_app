@@ -9,29 +9,28 @@
 <!--[if lte IE 8]>
     <link rel="stylesheet" href="http://code.leafletjs.com/leaflet-0.3.1/leaflet.ie.css" />
 <![endif]-->
-
 </head>
 <body>
-<div id="header-container">
-		<header class="wrapper clearfix">
-			<h1 id="title">City of Salisbury:  Fire Hydrant Finder</h1>
-		</header>
-</div>
-<div id="main" class="wrapper clearfix">
-<div id="map"></div>
-<form id="gcode">
-	<div id="gcodeInputs">
-	<input id="street" type="text" name="address" value="507 S Pinehurst Ave";></input>
-	<input id="zip" type="text" name="zip" value="21801";></input>
-	<input id="gcodeSubmit" type="submit" value="Geocode"></input>
-	</div>
-	<div class="slide-div">
-		<label for="buffAmt" style="font-weight: bold">Buffer Distance:</label>
-		<input type="text" id="buffAmt" style="border:0; color:#f6931f; font-weight:bold;" />
-		<div id="slider"></div>
-	</div>
-</form>
-</div>
+<header class="pageHeader">
+	<p class="citySeal">City Seal</p>
+</header>
+<section>
+	<div id="map"></div>
+	<form class="geocodeBar">
+		<input class="address">Address</input>
+		<input class="city">City</input>
+		<input class="state">State</input>
+		<input class="zip">Zip</input>
+		<input class="geocode" type="submit">Go</input>
+	</form>
+	<aside class="buffBar">
+		<div class="buffLabel">Buffer By</div>
+		<div class="buffMeasure">Slider Setting</div>
+		<div class="slider">Slider Bar</div>
+	</aside>
+	<div>Results/Info Box</div>
+</section>
+<footer>Footer</footer>
 </body>
 <script src="http://code.leafletjs.com/leaflet-0.3.1/leaflet.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
