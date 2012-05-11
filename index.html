@@ -2,7 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0">
 <title>CartoDB Testing</title>
+<link rel="stylesheet" href="./normalize.css/normalize.css" type="text/css"/>
 <link rel="stylesheet" href="style.css" type="text/css"/>
 <link rel="stylesheet" href="http://code.leafletjs.com/leaflet-0.3.1/leaflet.css" type="text/css"/>
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/ui-darkness/jquery-ui.css" type="text/css"/>
@@ -11,29 +13,30 @@
 <![endif]-->
 </head>
 <body>
-<header class="pageHeader">
+<header class="header clearfix">
 <hgroup>
-<h1>Page Header</h1>
-<h2>City Seal</h2>
+<h2>Where's my house?</h1>
 </hgroup>
 </header>
 <section>
-<div id="map"></div>
-<div>
-<form class="geocodeBar">
-<input id="street" value="507 S Pinehurst Ave">Address</input>
-<input id="city">City</input>
-<input id="state">State</input>
-<input id="zip" value="21801">Zip</input>
-<input id="gcodeSubmit" type="submit">Go</input>
-</form>
-<div class="buffBar">
-<p class="buffLabel">Buffer By</p>
-<p class="buffMeasure">Slider Setting</p>
-<div id="slider">Slider Bar</div>
+<div id="map" class="clearfix"></div>
+<div id="tools" class="clearfix">
+	<form id="gcodeBox">
+		<div>
+		<input id="street" value="507 S Pinehurst Ave"></input>
+		<input id="city"></input>
+		<input id="state"></input>
+		<input id="zip" value="21801"></input>
+		</div>
+		<input id="gcodeSubmit" type="submit"></input>
+	</form>
+<!-- 	<div class="buffBar">
+		<p class="buffLabel">Buffer By</p>
+		<p class="buffMeasure">Slider Setting</p>
+	<div id="slider">Slider Bar</div> -->
 </div>
 </div>
-<div>Results/Info Box</div>
+<div class="infoBox"></div>
 </section>
 <footer>Footer</footer>
 </body>
