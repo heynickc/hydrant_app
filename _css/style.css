@@ -860,12 +860,11 @@ html {
 }
 body {
 	height: 100%;
+  position: relative;
 }
 .header {
 	height: 40px; /*8.33333333%*/
 	background: rgb(65,67,74);
-  position: absolute;
-  top: 0;
 }
 .header h2 {
 	color: rgb(242,241,233);
@@ -879,8 +878,9 @@ body {
 div.wrapper {
   height: 100%;
   width: 100%;
+  position: relative;
+  top:-40px;
   padding: 40px 0 90px 0;
-  position: absolute;
 }
 #map {
 	width: 100%;
