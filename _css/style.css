@@ -855,12 +855,12 @@ rgb(135,121,99) Light Brown
 
 html {
 	height: 100%;
-	overflow: hidden;
-  position: relative;
+  overflow: hidden;
 }
 body {
 	height: 100%;
   position: relative;
+  display: table;
 }
 .header {
 	height: 40px; /*8.33333333%*/
@@ -873,13 +873,13 @@ body {
   font-weight: bold;
 }
 
-/* Map div */
+/* map div */
 
 div.wrapper {
   height: 100%;
   width: 100%;
   position: relative;
-  top:-40px;
+  top: -40px;
   padding: 40px 0 90px 0;
 }
 #map {
@@ -896,6 +896,7 @@ div.wrapper {
   position: absolute;
   bottom: 0;
   background: rgb(65,67,74);
+  display: none;
 }
 #gcodeBox div {
   width: 250px;
@@ -932,16 +933,14 @@ footer {
 }
 #gcodeSubmit {
   margin: 10px 0 10px 0;
+  float: left;
   height: 70px;
   width: 60px;
-	float: left;
+  text-align: center;
 }
 
 @media only screen and (min-width: 480px) {
   /* 480 =================================================== */
-/*  #map {
-    height: 510px;
-  }*/
 }
 @media only screen and (min-width: 600px) {
   /* 600 =================================================== */
@@ -953,15 +952,13 @@ footer {
   small {
     line-height: 1.45;
   }
-/*  #map {
-    height: 638px;
-  }*/
 }
 @media only screen and (min-width: 768px) {
   /* 768 =================================================== */
   body {
-    display: table;
+  /*  display: table;*/
     border-collapse: collapse;
+    overflow: auto;
   }
   p,
   ol,
@@ -982,15 +979,9 @@ footer {
     margin: 0 auto;
     width: 90%;
   }
-/*  #map {
-    height: 638px;
-  }*/
 }
 @media only screen and (min-width: 992px) {
   /* 992 =================================================== */
-/*  #map {
-    height: 894px;
-  }*/
 }
 @media only screen and (min-width: 1382px) {
   /* 1382 =================================================== */
