@@ -889,16 +889,16 @@ div.wrapper {
 
 /* Geocoding Toolbox */
 
-#gcodeBox {
+.gcodeBox {
   width: 100%;
   height: 90px; /*18.75%*/
   margin-bottom: 0;
   position: absolute;
   bottom: 0;
   background: rgb(65,67,74);
-  display: none;
+/*  display: none;*/
 }
-#gcodeBox div {
+.gcodeBox div {
   width: 250px;
   float: left;
 }
@@ -937,6 +937,47 @@ footer {
   height: 70px;
   width: 60px;
   text-align: center;
+}
+
+/*buffer slider*/
+.sliderBox {
+  width: 100%;
+  height: 90px; /*18.75%*/
+  margin-bottom: 0;
+  position: absolute;
+  bottom: 0;
+  background: rgb(65,67,74);
+}
+.buffBar label {
+  color: white;
+  float: left;
+  margin: 10px 10px 10px 10px;
+  line-height: 26px;
+  font-size: 1.2em;
+  width: 120px;
+}
+#buffAmt {
+  width: 120px;
+  margin: 10px 50px 10px 10px;
+  float: right;
+  font-size: 1.2em;
+  background: rgb(65,67,74);
+  border: none;
+  color: rgb(242,241,233);
+  padding: 0;
+  font-weight: bold;
+  height: 26px;
+}
+.buffBar {
+  height: 100%;
+  width: 320px;
+}
+#slider {
+  clear: both;
+  margin: 10px 10px 20px 10px;
+  width: 298px;
+  position: absolute;
+  bottom: 0;
 }
 
 @media only screen and (min-width: 480px) {

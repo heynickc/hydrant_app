@@ -6,7 +6,7 @@
 <title>CartoDB Testing</title>
 <link rel="stylesheet" href="./_css/normalize.css" type="text/css"/>
 <link rel="stylesheet" href="http://code.leafletjs.com/leaflet-0.3.1/leaflet.css" type="text/css"/>
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/ui-darkness/jquery-ui.css" type="text/css"/>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/smoothness/jquery-ui.css" type="text/css"/>
 <link rel="stylesheet" href="./_css/style.css" type="text/css"/>
 <!--[if lte IE 8]>
     <link rel="stylesheet" href="http://code.leafletjs.com/leaflet-0.3.1/leaflet.ie.css" />
@@ -21,7 +21,7 @@
 <div class="wrapper clearfix">
 <div id="map"></div>
 </div>
-<form id="gcodeBox" class="clearfix">
+<!-- <form class="gcodeBox" class="clearfix">
 	<div class="clearfix">
 	<input id="street" value="507 S Pinehurst Ave"></input>
 	<input id="city"></input>
@@ -29,11 +29,14 @@
 	<input id="zip" value="21801"></input>
 	</div>
 <input id="gcodeSubmit" class="btn btn-success" type="submit" value="Go"></input>
-</form>
-<!-- 	<div class="buffBar">
-		<p class="buffLabel">Buffer By</p>
-		<p class="buffMeasure">Slider Setting</p>
-	<div id="slider">Slider Bar</div> -->
+</form> -->
+<div class="sliderBox clearfix">
+	<div class="buffBar clearfix">
+	<input type="text" id="buffAmt"></input>
+	<label for="buffAmt">Buffer By:</label>
+	<div id="slider"></div>
+	</div>
+</div>
 <div class="infoBox"></div>
 <footer>Footer</footer>
 </body>
