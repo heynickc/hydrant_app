@@ -856,14 +856,16 @@ rgb(135,121,99) Light Brown
 html {
 	height: 100%;
 	overflow: hidden;
+  position: relative;
 }
 body {
 	height: 100%;
-  position: relative;
 }
 .header {
 	height: 40px; /*8.33333333%*/
 	background: rgb(65,67,74);
+  position: absolute;
+  top: 0;
 }
 .header h2 {
 	color: rgb(242,241,233);
@@ -871,25 +873,27 @@ body {
 	margin: 0;
   font-weight: bold;
 }
-.header h4 {
-	display: none;
-}
+
+/* Map div */
+
 div.wrapper {
-  position: absolute;
-  bottom: 90px;
-  top: 40px;
   height: 100%;
   width: 100%;
+  padding: 40px 0 90px 0;
+  position: absolute;
 }
 #map {
 	width: 100%;
   height: 100%;
 }
+
+/* Geocoding Toolbox */
+
 #gcodeBox {
   width: 100%;
   height: 90px; /*18.75%*/
   margin-bottom: 0;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   background: rgb(65,67,74);
 }
