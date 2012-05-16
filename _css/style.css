@@ -897,7 +897,7 @@ div.wrapper {
   bottom: 0;
   background: rgb(65,67,74);
   float: left;
-/*  display: none;*/
+  display: none;/*for testing*/
 }
 .gcodeBox div {
   width: 250px;
@@ -948,9 +948,8 @@ footer {
   position: absolute;
   bottom: 0;
   background: rgb(65,67,74);
-  float: right;
-  background: none;
-  margin-left: 320px;
+  float: left;
+/*  margin-left: 320px;*/
 }
 .buffBar label {
   color: white;
