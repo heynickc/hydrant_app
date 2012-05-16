@@ -1,4 +1,4 @@
-$("document").live('pageinit', function() {
+$("document").bind('pageinit', function() {
 
 	var map = new L.Map('map'),
 		cloudmadeUrl = 'http://{s}.tile.cloudmade.com/903a54a369114f6580f12400d931ece6/997/256/{z}/{x}/{y}.png',

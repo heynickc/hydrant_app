@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width; initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CartoDB Testing</title>
 <link rel="stylesheet" href="./_css/normalize.css" type="text/css"/>
 <link rel="stylesheet" href="http://code.leafletjs.com/leaflet-0.3.1/leaflet.css" type="text/css"/>
@@ -11,14 +11,20 @@
 <!--[if lte IE 8]>
     <link rel="stylesheet" href="http://code.leafletjs.com/leaflet-0.3.1/leaflet.ie.css" />
 <![endif]-->
+
+<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+<script src="http://code.leafletjs.com/leaflet-0.3.1/leaflet.js"></script>
+<script src="./_js/script.js"></script>
+
 </head>
-<body>
-<header class="header clearfix">
+<body data-role="page">
+<header data-role="header" class="header clearfix">
 <hgroup>
 <h2>Where's my house?</h1>
 </hgroup>
 </header>
-<div class="wrapper clearfix">
+<div data-role="content" class="wrapper clearfix">
 <div id="map"></div>
 </div>
 <form class="gcodeBox" class="clearfix">
@@ -40,8 +46,10 @@
 <div class="infoBox"></div>
 <footer>Footer</footer>
 </body>
-<script src="http://code.leafletjs.com/leaflet-0.3.1/leaflet.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+
+<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 <script src="./_js/script.js"></script>
+<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+<script src="http://code.leafletjs.com/leaflet-0.3.1/leaflet.js"></script>
+
 </html>
