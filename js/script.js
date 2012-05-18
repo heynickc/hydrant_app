@@ -1,14 +1,15 @@
 $("document").ready(function() {
 
-	var map = new L.Map('map'),
-		cloudmadeUrl = 'http://a.tiles.mapbox.com/v1/mapbox.mapbox-light/{z}/{x}/{y}.png',
-		cloudmadeAttrib = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade',
-		cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18, attribution: cloudmadeAttrib, scheme: 'tms'}),
-		salisbury = new L.LatLng(38.36627, -75.60006);
-	var	bldgTileURL = 'http://nickchamberlain.cartodb.com/tiles/buildings/{z}/{x}/{y}.png',
-		bldgTiles = new L.TileLayer(bldgTileURL);
+	var map = new L.Map('map');
+	
+	var cloudmadeUrl = 'http://a.tiles.mapbox.com/v1/mapbox.mapbox-light/{z}/{x}/{y}.png';
+	var	cloudmadeAttrib = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade';
+	var	cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18, attribution: cloudmadeAttrib, scheme: 'tms'});
+	var	salisbury = new L.LatLng(38.36627, -75.60006);
+	var	bldgTileURL = 'http://nickchamberlain.cartodb.com/tiles/buildings/{z}/{x}/{y}.png';
+	var bldgTiles = new L.TileLayer(bldgTileURL);
 	var markerGroup = new L.LayerGroup();
-		overlayGroup = new L.LayerGroup();
+	var overlayGroup = new L.LayerGroup();
 	
 function refreshMap () {
 	map.setView(salisbury, 13)
