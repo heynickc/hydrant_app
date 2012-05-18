@@ -9,7 +9,7 @@ $("document").ready(function() {
 	var mapboxAttrib = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade';
 	var	mapbox = new L.TileLayer(mapboxUrl, {maxZoom: 18, attribution: mapboxAttrib, scheme: 'tms'});
 
-	// Mapbox Light tiles
+	// Mapbox Streets tiles
 	var mapboxStUrl = 'http://a.tiles.mapbox.com/v1/mapbox.mapbox-streets/{z}/{x}/{y}.png';
 	var mapboxAttrib = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade';
 	var	mapboxSt = new L.TileLayer(mapboxStUrl, {maxZoom: 18, attribution: mapboxAttrib, scheme: 'tms'});
@@ -45,6 +45,7 @@ $("document").ready(function() {
 	var overlayMaps = {
 		"Buildings": bldgTiles,
 		"City Quadrants": quadTiles,
+		"Buffer": overlayGroup
 	}
 	// Add layer picker
 	var layersControl = new L.Control.Layers(baseMaps, overlayMaps, {collapsed: true});

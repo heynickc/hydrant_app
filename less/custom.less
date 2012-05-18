@@ -1,0 +1,139 @@
+/*Styles ===================================================== */
+
+/*Colors:
+rgb(65,67,74) Blue
+rgb(242,241,233) Off White
+rgb(110,148,137) Light Green
+rgb(222,220,195) Light Grey
+rgb(135,121,99) Light Brown
+*/
+
+html {
+	height: 100%;
+  overflow: hidden;
+}
+body {
+	height: 100%;
+  position: relative;
+  display: table;
+}
+.header {
+	height: 40px; /*8.33333333%*/
+	background: rgb(65,67,74);
+}
+.header h2 {
+	color: rgb(242,241,233);
+	padding: 6px;
+	margin: 0;
+  font-weight: bold;
+}
+
+/* map div */
+
+div.wrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  top: -40px;
+  padding: 40px 0 90px 0;
+}
+#map {
+	width: 100%;
+  height: 100%;
+}
+
+/* Geocoding Toolbox */
+
+.gcodeBox {
+  width: 100%;
+  height: 90px; /*18.75%*/
+  margin-bottom: 0;
+  position: absolute;
+  bottom: 0;
+  background: rgb(65,67,74);
+  float: left;
+  /*display: none; /*for testing*/
+}
+.gcodeBox div {
+  width: 250px;
+  float: left;
+}
+footer {
+	display: none;
+}
+#street {
+	width: 230px; /*92%*/
+	float: left;
+  margin: 10px;
+  height: 30px;
+  padding: 0 5px;
+}
+#city {
+	width: 110px; /*44%*/
+	float: left;
+  margin: 0 10px 10px 10px;
+  height: 30px;
+  padding: 0 5px;
+}
+#state {
+	width: 40px; /*16%*/
+	float: left;
+  margin: 0 10px 10px 0;
+  height: 30px;
+}
+#zip {
+	width: 60px; /*24%*/
+	float: left;
+  margin: 0 10px 10px 0;
+  height: 30px;
+}
+#gcodeSubmit {
+  margin: 10px 0 10px 0;
+  float: left;
+  height: 70px;
+  width: 60px;
+  text-align: center;
+}
+
+/*buffer slider*/
+.sliderBox {
+  width: 100%;
+  height: 90px; /*18.75%*/
+  margin-bottom: 0;
+  position: absolute;
+  bottom: 0;
+  background: rgb(65,67,74);
+  float: left;
+  margin-left: 320px;
+}
+.buffBar label {
+  color: white;
+  float: left;
+  margin: 10px 10px 10px 10px;
+  line-height: 26px;
+  font-size: 1.2em;
+  width: 120px;
+}
+#buffAmt {
+  width: 120px;
+  margin: 10px 50px 10px 10px;
+  float: right;
+  font-size: 1.2em;
+  background: rgb(65,67,74);
+  border: none;
+  color: rgb(242,241,233);
+  padding: 0;
+  font-weight: bold;
+  height: 26px;
+}
+.buffBar {
+  height: 100%;
+  width: 320px;
+}
+#slider {
+  clear: both;
+  margin: 10px 10px 20px 10px;
+  width: 298px;
+  position: absolute;
+  bottom: 0;
+}
