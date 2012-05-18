@@ -1,6 +1,6 @@
 $("document").ready(function() {
 
-	var map = new L.Map('map');
+
 
 	// Cloudmade tiles
 	var cloudmadeUrl = 'http://{s}.tile.cloudmade.com/903a54a369114f6580f12400d931ece6/997/256/{z}/{x}/{y}.png';
@@ -10,6 +10,7 @@ $("document").ready(function() {
 	// Mapbox tiles
 	var mapboxUrl = 'http://a.tiles.mapbox.com/v1/mapbox.mapbox-light/{z}/{x}/{y}.png';
 	var	mapboxAttrib = 'MapBox Streets';
+	var mapboxAttrib = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade';
 	var	mapbox = new L.TileLayer(mapboxUrl, {maxZoom: 18, attribution: mapboxAttrib, scheme: 'tms'});
 
 	// CartoDB building footprint tiles
@@ -23,11 +24,31 @@ $("document").ready(function() {
 	// Marker/Overlay tile groups
 	var markerGroup = new L.LayerGroup();
 	var overlayGroup = new L.LayerGroup();
-	
+
+	// Create map
+	var	salisbury = new L.LatLng(38.36627, -75.60006);
+	var map = new L.Map('map', {
+			center: salisbury,
+			layers: [cloudmade, mapbox, metro08, bldgTiles, markerGroup, overlayGroup]
+		});
+	var baseMaps = {
+		"Cloudmade Tiles": cloudmade,
+		"Mapbox Tiles": mapbox		
+	}
+	var overlayMaps = {
+		"2008 Aerial Photos": metro08,
+		"Buildings": bldgTiles,
+		"Buffer": overlayGroup
+	}
+	// Add layer picker
+	var layersControl = new L.Control.Layers(baseMaps, overlayMaps);
+	map.addControl (layersControl);
+
+	// Refresh map
 	function refreshMap () {
-		var	salisbury = new L.LatLng(38.36627, -75.60006);
 		map.setView(salisbury, 13)
 		   .addLayer(mapbox)
+		   .addLayer(metro08)
 		   .addLayer(bldgTiles);
 		markerGroup.clearLayers();
 		overlayGroup.clearLayers();
