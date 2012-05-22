@@ -1,4 +1,12 @@
 $("document").ready(function() {
+
+	// Resize Map Center Div
+	$(".wrapper").css("height", ($(".wrapper").outerHeight() - 130)+"px");
+	$(window).resize(function() {
+		$(".wrapper").height("100%")
+		$(".wrapper").height(($(".wrapper").outerHeight() - 130)+"px");
+	});
+
 	// Cloudmade tiles
 	var cloudmadeUrl = 'http://{s}.tile.cloudmade.com/903a54a369114f6580f12400d931ece6/997/256/{z}/{x}/{y}.png';
 	var cloudmadeAttrib = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade';

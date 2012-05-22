@@ -8,18 +8,23 @@ rgb(222,220,195) Light Grey
 rgb(135,121,99) Light Brown
 */
 
+body, html {
+  height: 100%;
+}
 html {
-	height: 100%;
   overflow: hidden;
+  position: relative;
 }
 body {
 	height: 100%;
   position: relative;
-  display: table;
 }
 .header {
 	height: 40px; /*8.33333333%*/
 	background: rgb(65,67,74);
+  position: relative;
+  top: 0;
+  width: 100%;
 }
 .header h2 {
 	color: rgb(242,241,233);
@@ -28,14 +33,14 @@ body {
   font-weight: bold;
 }
 
-/* map div */
+/* Map Div */
 
 div.wrapper {
   height: 100%;
   width: 100%;
   position: relative;
-  top: -40px;
-  padding: 40px 0 90px 0;
+  top: 0;
+  padding: 0;
 }
 #map {
 	width: 100%;
@@ -47,7 +52,7 @@ div.wrapper {
 .controls {
   width: 100%;
   height: 90px;
-  position: absolute;
+  position: relative;
   bottom: 0;
   background: rgb(65,67,74);
 }
@@ -55,11 +60,9 @@ div.wrapper {
 /* Geocoding Toolbox */
 
 .gcodeBox {
-  width: 100%;
+  width: 320px;
   height: 90px; /*18.75%*/
   margin-bottom: 0;
-  position: absolute;
-  bottom: 0;
   background: rgb(65,67,74);
   float: left;
   /*display: none; /*for testing*/
@@ -107,14 +110,11 @@ footer {
 
 /*buffer slider*/
 .sliderBox {
-  width: 100%;
+  width: 320px;
   height: 90px; /*18.75%*/
   margin-bottom: 0;
-  position: absolute;
-  bottom: 0;
   background: rgb(65,67,74);
   float: left;
-  margin-left: 320px;
 }
 .buffBar label {
   color: white;
@@ -144,6 +144,6 @@ footer {
   clear: both;
   margin: 10px 10px 20px 10px;
   width: 298px;
-  position: absolute;
+  position: relative;
   bottom: 0;
 }
