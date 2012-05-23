@@ -1,10 +1,10 @@
 $("document").ready(function() {
 
 	// Resize Map Center Div
-	$(".wrapper").css("height", ($(".wrapper").outerHeight() - 130)+"px");
+	$(".wrapper").height($(".wrapper").outerHeight() - (($(".controls").outerHeight()) + $("header").outerHeight()) + "px");
 	$(window).resize(function() {
 		$(".wrapper").height("100%")
-		$(".wrapper").height(($(".wrapper").outerHeight() - 130)+"px");
+		$(".wrapper").height($(".wrapper").outerHeight() - (($(".controls").outerHeight()) + $(".header").outerHeight()) + "px");
 	});
 
 	// Cloudmade tiles
