@@ -20,13 +20,13 @@ $("document").ready(function() {
 	var mapboxAttrib = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade';
 	var	mapboxSt = new L.TileLayer(mapboxStUrl, {maxZoom: 19, attribution: mapboxAttrib, scheme: 'tms'});
 
-	// 2008 aerial photo tiles
+	// 2006 aerial photo tiles
 	var metro06URL = 'http://gis.wicomicocounty.org/metro2006/{z}/{x}/{y}.png';
 	var metro06 = new L.TileLayer(metro06URL, {maxZoom: 19, attribution: mapboxAttrib, scheme: 'tms', opacity: 1});
 	// 2008 aerial photo tiles
 	var metro08URL = 'http://gis.wicomicocounty.org/metro2008/{z}/{x}/{y}.png';
 	var metro08 = new L.TileLayer(metro08URL, {maxZoom: 19, attribution: mapboxAttrib, scheme: 'tms', opacity: 1});
-	// 2008 aerial photo tiles
+	// 2010 aerial photo tiles
 	var metro10URL = 'http://gis.wicomicocounty.org/metro2010/{z}/{x}/{y}.png';
 	var metro10 = new L.TileLayer(metro10URL, {maxZoom: 19, attribution: mapboxAttrib, scheme: 'tms', opacity: 1});
 
@@ -52,6 +52,7 @@ $("document").ready(function() {
 		"Mapbox Light": mapbox,
 		"Mapbox Streets": mapboxSt,
 		"2006 Aerials": metro06,
+		"2008 Aerials": metro08,
 		"2010 Aerials": metro10
 	}
 	var overlayMaps = {
