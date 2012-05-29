@@ -1,27 +1,38 @@
 $("document").ready(function() {
+
+	// Resize Map Center Div
+	$(".wrapper").height($(".wrapper").outerHeight() - (($(".controls").outerHeight()) + $("header").outerHeight()) + "px");
+	$(window).resize(function() {
+		$(".wrapper").height("100%")
+		$(".wrapper").height($(".wrapper").outerHeight() - (($(".controls").outerHeight()) + $(".header").outerHeight()) + "px");
+	});
+
 	// Cloudmade tiles
 	var cloudmadeUrl = 'http://{s}.tile.cloudmade.com/903a54a369114f6580f12400d931ece6/997/256/{z}/{x}/{y}.png';
 	var cloudmadeAttrib = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade';
-	var cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18, attribution: cloudmadeAttrib});
-
+	var cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 19, attribution: cloudmadeAttrib});
 	// Mapbox Light tiles
 	var mapboxUrl = 'http://a.tiles.mapbox.com/v1/mapbox.mapbox-light/{z}/{x}/{y}.png';
 	var mapboxAttrib = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade';
-	var	mapbox = new L.TileLayer(mapboxUrl, {maxZoom: 18, attribution: mapboxAttrib, scheme: 'tms'});
-
+	var	mapbox = new L.TileLayer(mapboxUrl, {maxZoom: 19, attribution: mapboxAttrib, scheme: 'tms'});
 	// Mapbox Streets tiles
 	var mapboxStUrl = 'http://a.tiles.mapbox.com/v1/mapbox.mapbox-streets/{z}/{x}/{y}.png';
 	var mapboxAttrib = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade';
-	var	mapboxSt = new L.TileLayer(mapboxStUrl, {maxZoom: 18, attribution: mapboxAttrib, scheme: 'tms'});
+	var	mapboxSt = new L.TileLayer(mapboxStUrl, {maxZoom: 19, attribution: mapboxAttrib, scheme: 'tms'});
 
+	// 2006 aerial photo tiles
+	var metro06URL = 'http://gis.wicomicocounty.org/metro2006/{z}/{x}/{y}.png';
+	var metro06 = new L.TileLayer(metro06URL, {maxZoom: 19, attribution: mapboxAttrib, scheme: 'tms', opacity: 1});
 	// 2008 aerial photo tiles
-	var metro08URL = 'http://www.ci.salisbury.md.us/publicworks/gis/metro_aerials/{z}/{x}/{y}.png';
-	var metro08 = new L.TileLayer(metro08URL, {maxZoom: 18, attribution: mapboxAttrib, scheme: 'tms', opacity: 1});
+	var metro08URL = 'http://gis.wicomicocounty.org/metro2008/{z}/{x}/{y}.png';
+	var metro08 = new L.TileLayer(metro08URL, {maxZoom: 19, attribution: mapboxAttrib, scheme: 'tms', opacity: 1});
+	// 2010 aerial photo tiles
+	var metro10URL = 'http://gis.wicomicocounty.org/metro2010/{z}/{x}/{y}.png';
+	var metro10 = new L.TileLayer(metro10URL, {maxZoom: 19, attribution: mapboxAttrib, scheme: 'tms', opacity: 1});
 
 	// CartoDB building footprint tiles
 	var	bldgTileURL = 'http://nickchamberlain.cartodb.com/tiles/buildings/{z}/{x}/{y}.png';
 	var bldgTiles = new L.TileLayer(bldgTileURL);
-
 	// CartoDB building footprint tiles
 	var	quadTileURL = 'http://nickchamberlain.cartodb.com/tiles/cityquads/{z}/{x}/{y}.png';
 	var quadTiles = new L.TileLayer(quadTileURL);
@@ -31,7 +42,7 @@ $("document").ready(function() {
 	var overlayGroup = new L.LayerGroup();
 
 	// Create map
-	var	salisbury = new L.LatLng(38.3759, -75.6005);
+	var	salisbury = new L.LatLng(38.3660, -75.6035);
 	var map = new L.Map('map', {
 			center: salisbury,
 			layers: [mapboxSt]
@@ -40,7 +51,9 @@ $("document").ready(function() {
 		"Cloudmade Tiles": cloudmade,
 		"Mapbox Light": mapbox,
 		"Mapbox Streets": mapboxSt,
-		"2008 Aerial Photos": metro08
+		"2006 Aerials": metro06,
+		"2008 Aerials": metro08,
+		"2010 Aerials": metro10
 	}
 	var overlayMaps = {
 		"Buildings": bldgTiles,
