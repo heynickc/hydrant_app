@@ -339,62 +339,6 @@ sub {
   bottom: -0.25em;
 }
 @font-face {
-  font-family: 'PTSansNarrowRegular';
-  src: url('../fonts/PTN57F-webfont.eot');
-  src: url('../fonts/PTN57F-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/PTN57F-webfont.woff') format('woff'), url('../fonts/PTN57F-webfont.ttf') format('truetype'), url('../fonts/PTN57F-webfont.svg#PTSansNarrowRegular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'PTSansCaptionBold';
-  src: url('../fonts/PTC75F-webfont.eot');
-  src: url('../fonts/PTC75F-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/PTC75F-webfont.woff') format('woff'), url('../fonts/PTC75F-webfont.ttf') format('truetype'), url('../fonts/PTC75F-webfont.svg#PTSansCaptionBold') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'PTSansCaptionRegular';
-  src: url('../fonts/PTC55F-webfont.eot');
-  src: url('../fonts/PTC55F-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/PTC55F-webfont.woff') format('woff'), url('../fonts/PTC55F-webfont.ttf') format('truetype'), url('../fonts/PTC55F-webfont.svg#PTSansCaptionRegular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'PTSansBoldItalic';
-  src: url('../fonts/PTS76F-webfont.eot');
-  src: url('../fonts/PTS76F-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/PTS76F-webfont.woff') format('woff'), url('../fonts/PTS76F-webfont.ttf') format('truetype'), url('../fonts/PTS76F-webfont.svg#PTSansBoldItalic') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'PTSansBold';
-  src: url('../fonts/PTS75F-webfont.eot');
-  src: url('../fonts/PTS75F-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/PTS75F-webfont.woff') format('woff'), url('../fonts/PTS75F-webfont.ttf') format('truetype'), url('../fonts/PTS75F-webfont.svg#PTSansBold') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'PTSansItalic';
-  src: url('../fonts/PTS56F-webfont.eot');
-  src: url('../fonts/PTS56F-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/PTS56F-webfont.woff') format('woff'), url('../fonts/PTS56F-webfont.ttf') format('truetype'), url('../fonts/PTS56F-webfont.svg#PTSansItalic') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'PTSansRegular';
-  src: url('../fonts/PTS55F-webfont.eot');
-  src: url('../fonts/PTS55F-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/PTS55F-webfont.woff') format('woff'), url('../fonts/PTS55F-webfont.ttf') format('truetype'), url('../fonts/PTS55F-webfont.svg#PTSansRegular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'PTSansNarrowBold';
-  src: url('../fonts/PTN77F-webfont.eot');
-  src: url('../fonts/PTN77F-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/PTN77F-webfont.woff') format('woff'), url('../fonts/PTN77F-webfont.ttf') format('truetype'), url('../fonts/PTN77F-webfont.svg#PTSansNarrowBold') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
   font-family: 'OpenSansLight';
   src: url('../fonts/OpenSans-Light-webfont.eot');
   src: url('../fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/OpenSans-Light-webfont.woff') format('woff'), url('../fonts/OpenSans-Light-webfont.ttf') format('truetype'), url('../fonts/OpenSans-Light-webfont.svg#OpenSansLight') format('svg');
@@ -2028,7 +1972,7 @@ html {
   height: 100%;
 }
 html {
-  overflow: auto;
+  overflow: hidden;
   position: relative;
 }
 body {
@@ -2036,9 +1980,6 @@ body {
   position: relative;
 }
 .header {
-  height: 40px;
-  /*8.33333333%*/
-
   background: #41434a;
   position: relative;
   top: 0;
@@ -2050,6 +1991,9 @@ body {
   margin: 0;
   font-weight: bold;
 }
+.header h2:hover {
+  background: #41434a;
+}
 /* Map Div */
 .wrapper {
   height: 100%;
@@ -2057,6 +2001,7 @@ body {
   position: relative;
   top: 0;
   padding: 0;
+  border: none;
 }
 #map {
   width: 100%;
@@ -2232,7 +2177,6 @@ footer {
 @media only screen and (min-width: 768px) {
   /* 768 =================================================== */
   body {
-    display: table;
     border-collapse: collapse;
   }
   [role="banner"] a[href="#navigation"] {
@@ -2258,143 +2202,4 @@ footer {
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
   /* 2x =================================================== */
-}
-/* 320 and Up */
-/* Modules upstart */
-/* Version: 1.0 */
-/* Author: Andy Clarke */
-/* URL: http://stuffandnonsense.co.uk/projects/320andup */
-.grid {
-  margin-bottom: 1.5em;
-  border-bottom: 1px dashed #c7ced6;
-}
-.grid:last-child {
-  margin-bottom: 0;
-  border-bottom-width: 0;
-}
-.furniture-letter {
-  overflow: hidden;
-}
-.furniture-letter span {
-  display: block;
-  float: left;
-  margin: 0 12px 0 0;
-  height: 44px;
-  width: 44px;
-  background-color: #2d353e;
-  color: #ffffff;
-  font-size: 32px;
-  font-size: 3.2rem;
-  font-weight: bold;
-  line-height: 44px;
-  text-align: center;
-}
-@media only screen and (min-width: 480px) {
-  /* Styles */
-}
-@media only screen and (min-width: 600px) {
-  /* Styles */
-}
-@media only screen and (min-width: 768px) {
-  .grids-two .grid {
-    width: 43.03%;
-    margin-bottom: 0;
-    border-bottom-width: 0;
-  }
-  .grids-two .grid-1 {
-    float: left;
-  }
-  .grids-two .grid-2 {
-    float: right;
-  }
-  .grids-three .grid-a {
-    float: left;
-    width: 31.64%;
-    margin-right: 2.53%;
-  }
-  .grids-four .grid-a {
-    float: left;
-    width: 31.64%;
-    margin-right: 2.53%;
-  }
-}
-@media only screen and (min-width: 992px) {
-  .grids-three .grid {
-    float: left;
-    width: 31.64%;
-    margin: 0 2.53% 0 0;
-    border-bottom-width: 0;
-  }
-  .grids-three .grid-3 {
-    float: right;
-    margin-right: 0;
-  }
-  .grids-three .grid .grid-a {
-    float: none;
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 0.75em;
-  }
-  .grids-four .grid {
-    float: left;
-    width: 20.25%;
-    margin: 0 6.32% 0 0;
-    border-bottom-width: 0;
-  }
-  .grids-four .grid-4 {
-    float: right;
-    margin-right: 0;
-  }
-  .grids-four .grid .grid-a {
-    float: none;
-    width: 100%;
-    margin-right: 0;
-  }
-}
-@media only screen and (min-width: 1382px) {
-  /* Styles */
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-  /* Styles */
-}
-/* 320 and Up */
-/* Panels Upstart */
-/* Version: 1.0 */
-/* Author: Andy Clarke */
-/* URL: http://stuffandnonsense.co.uk/projects/320andup */
-.full {
-  margin-bottom: 1.5em;
-  padding: 1.5em;
-  background-color: #f3f5f6;
-  border-top: 2px solid #c7ced6;
-  border-bottom: 2px solid #c7ced6;
-}
-.full .grids {
-  width: 90%;
-  margin: 0 auto;
-  padding: 1.5em 0;
-}
-@media only screen and (min-width: 480px) {
-  /* Styles */
-}
-@media only screen and (min-width: 600px) {
-  /* Styles */
-}
-@media only screen and (min-width: 768px) {
-  .special .grids-three .grid-a,
-  .special .grids-four .grid-a {
-    width: 43.03%;
-  }
-}
-@media only screen and (min-width: 992px) {
-  .special .grids-three .grid-a,
-  .special .grids-four .grid-a {
-    width: 100%;
-  }
-}
-@media only screen and (min-width: 1382px) {
-  /* Styles */
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-  /* Styles */
 }
