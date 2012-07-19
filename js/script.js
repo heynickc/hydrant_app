@@ -3,7 +3,7 @@ $("document").ready(function() {
 	// Resize Map Center Div
 	$(".wrapper").height($(".wrapper").outerHeight() - (($(".controls").outerHeight()) + $("header").outerHeight()) + "px");
 	$(window).resize(function() {
-		$(".wrapper").height("100%")
+		$(".wrapper").height("100%");
 		$(".wrapper").height($(".wrapper").outerHeight() - (($(".controls").outerHeight()) + $(".header").outerHeight()) + "px");
 	});
 
@@ -54,19 +54,19 @@ $("document").ready(function() {
 		"2006 Aerials": metro06,
 		"2008 Aerials": metro08,
 		"2010 Aerials": metro10
-	}
+	};
 	var overlayMaps = {
 		"Buildings": bldgTiles,
 		"City Quadrants": quadTiles,
 		"Buffer": overlayGroup
-	}
+	};
 	// Add layer picker
 	var layersControl = new L.Control.Layers(baseMaps, overlayMaps, {collapsed: true});
 	map.addControl(layersControl);
 
 	// Refresh map
 	function refreshMap () {
-		map.setView(salisbury, 13)
+		map.setView(salisbury, 13);
 		markerGroup.clearLayers();
 		overlayGroup.clearLayers();
 	}//resets map zoom and center, clears all markers
@@ -74,7 +74,7 @@ $("document").ready(function() {
 
 $("form").submit(function(event) {
 	event.preventDefault();
-	if ($("#street").val() != "") {
+	if ($("#street").val() !== "") {
 		//refreshMap();
 		markerGroup.clearLayers();
 		overlayGroup.clearLayers();
@@ -116,11 +116,11 @@ $("form").submit(function(event) {
 			} else {
 				refreshMap();
 				$('#street').val('Address Invalid');
-			};//test address and geocode it if a location is returned by the iMap service
+			}//test address and geocode it if a location is returned by the iMap service
 		}).error(function() {refreshMap();}); //get geocoding JSON
 	} else {
 		refreshMap();
-	};//if something is in #street field, do geocoding else reset the map
+	}//if something is in #street field, do geocoding else reset the map
 });//geocode address on submit
 
 function getBldgJSON() {
@@ -138,7 +138,7 @@ function getBldgJSON() {
 				var popupHTML = $('<ul/>', {
 					'id': 'my-new-list',
 					html: items.join('')
-				})//.appendTo(popupHTML);
+				});//.appendTo(popupHTML);
 				//console.log(popupHTML)
 				//console.log(e.latlng);
 				$.each(popupHTML, function(index) {
@@ -148,9 +148,9 @@ function getBldgJSON() {
 					popup.setLatLng(e.latlng);
 					popup.setContent(popupHTML.html());
 				map.openPopup(popup);
-			};//if the user clicks a feature make the popup
+			}//if the user clicks a feature make the popup
 		});//populates popup with cartodb JSON
-	};
+	}
 }
 getBldgJSON();
 
@@ -182,30 +182,31 @@ function getHydrantGeoJSON(loc) {
 	//var rad = $(".distance").val();
 	var rad = $("#slider").slider("value");
 	var hydLayer = new L.GeoJSON(null, {
-		    pointToLayer: function (latlng){
-		        return new L.CircleMarker(latlng, {
-		            radius: 3,
-		            fillColor: "#cd2105",
-		            color: "#000",
-		            weight: 1,
-		            opacity: 1,
-		            fillOpacity: 0.75
-		        });
-		    }
+		pointToLayer: function (latlng) {
+			return new L.CircleMarker(latlng, {
+				radius: 3,
+				fillColor: "#cd2105",
+				color: "#000",
+				weight: 1,
+				opacity: 1,
+				fillOpacity: 0.75
+				});
+			}
 		});
 	$.getJSON('http://nickchamberlain.cartodb.com/api/v1/sql/?q=SELECT * FROM hydrants WHERE ST_Contains(ST_Buffer(ST_Transform(ST_SetSRID(ST_Point(' + loc.lng + ',' + loc.lat + '),4326),26985),' + rad + '),ST_Transform(ST_SetSRID(hydrants.the_geom,4326),26985))&format=geojson&callback=?',
 		function(geojson) {
+
 			$.each(geojson.features, function(i, feature) {
-			hydLayer.addGeoJSON(feature);
-			})
+			hydLayer.addData(feature.geometry);
+			});
 		});
 	overlayGroup.addLayer(hydLayer);
 }
 
 $(function() {
 		$("#slider").slider({
-		min: 0, 
-		max: 2000, 
+		min: 0,
+		max: 2000,
 		value: 500,
 		slide: function( event, ui ) {
 				$( "#buffAmt" ).val(ui.value + " meters");
