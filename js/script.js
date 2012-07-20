@@ -17,7 +17,6 @@ $("document").ready(function() {
 	var	mapbox = new L.TileLayer(mapboxUrl, {maxZoom: 19, attribution: mapboxAttrib, scheme: 'tms'});
 	// Mapbox Streets tiles
 	var mapboxStUrl = 'http://a.tiles.mapbox.com/v1/mapbox.mapbox-streets/{z}/{x}/{y}.png';
-	var mapboxAttrib = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade';
 	var	mapboxSt = new L.TileLayer(mapboxStUrl, {maxZoom: 19, attribution: mapboxAttrib, scheme: 'tms'});
 
 	// 2006 aerial photo tiles
@@ -182,7 +181,7 @@ function getHydrantGeoJSON(loc) {
 	//var rad = $(".distance").val();
 	var rad = $("#slider").slider("value");
 	var hydLayer = new L.GeoJSON(null, {
-		pointToLayer: function (latlng) {
+		pointToLayer: function (feature, latlng) {
 			return new L.CircleMarker(latlng, {
 				radius: 3,
 				fillColor: "#cd2105",
@@ -195,9 +194,8 @@ function getHydrantGeoJSON(loc) {
 		});
 	$.getJSON('http://nickchamberlain.cartodb.com/api/v1/sql/?q=SELECT * FROM hydrants WHERE ST_Contains(ST_Buffer(ST_Transform(ST_SetSRID(ST_Point(' + loc.lng + ',' + loc.lat + '),4326),26985),' + rad + '),ST_Transform(ST_SetSRID(hydrants.the_geom,4326),26985))&format=geojson&callback=?',
 		function(geojson) {
-
 			$.each(geojson.features, function(i, feature) {
-			hydLayer.addData(feature.geometry);
+				hydLayer.addData(feature);
 			});
 		});
 	overlayGroup.addLayer(hydLayer);
