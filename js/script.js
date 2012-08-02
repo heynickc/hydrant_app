@@ -166,16 +166,6 @@ function drawCircle(loc) {
 	map.addLayer(overlayGroup);
 }
 
-function getHydrantsCartoDB(loc,rad) {
-	var cartodbHyd = new L.CartoDBLayer({
-		map_canvas: 'map',
-		map: map,
-		user_name: 'nickchamberlain',
-		table_name: 'hydrants',
-		query: 'SELECT * FROM hydrants WHERE ST_Contains(ST_Buffer(ST_Transform(ST_SetSRID(ST_Point(' + loc.lng + ',' + loc.lat + '),4326),26985),' + rad + '),ST_Transform(ST_SetSRID(hydrants.the_geom,4326),26985))'
-	});
-}//saved, but not used because JSON was easier to clear the layer out on .distance change
-
 function getHydrantGeoJSON(loc) {
 	//var hydLayer = new L.GeoJSON();
 	//var rad = $(".distance").val();
